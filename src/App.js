@@ -34,8 +34,6 @@ function App() {
 		getData();
 	}, []);
 
-	console.log('apppppp', info);
-
 	return (
 		<DataContext.Provider value={dataContextObject}>
 			<div className='App'>

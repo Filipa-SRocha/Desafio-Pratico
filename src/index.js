@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Fabricante from './routes/fabricante';
+import Fabricante from './routes/fabricante/fabricante';
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -11,7 +11,7 @@ ReactDOM.render(
 			<Routes>
 				<Route path='/' element={<App />} />
 				<Route path='/fabricante' element={<Fabricante />}>
-					<Route path=':tipo/:codigo' element={<Fabricante />} />
+					<Route path=':tipo/:marca/:codigo' element={<Fabricante />} />
 				</Route>
 				<Route
 					path='*'

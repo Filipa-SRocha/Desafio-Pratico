@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Model, Container, ListContainer, Marca } from './style';
+import Header from '../../components/Header';
 
 function Fabricante() {
 	const [modelos, setModelos] = useState([]);
@@ -17,14 +19,16 @@ function Fabricante() {
 	}, []);
 
 	return (
-		<div>
-			<h2>Tipo Veiculo: {params.tipo}</h2>
-			<h2>Fabricante: {params.codigo}</h2>
+		<Container>
+			<Header />
+			<Marca>{params.marca}</Marca>
 
-			{modelos.map((carro) => {
-				return <div key={carro.nome}>{carro.nome}</div>;
-			})}
-		</div>
+			<ListContainer>
+				{modelos.map((carro) => {
+					return <Model key={carro.nome}>{carro.nome}</Model>;
+				})}
+			</ListContainer>
+		</Container>
 	);
 }
 

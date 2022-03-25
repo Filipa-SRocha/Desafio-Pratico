@@ -25,7 +25,9 @@ function Accordion(props) {
 					{data[`${props.title.toLowerCase()}`].map((marca) => {
 						return (
 							<Link
-								to={`/fabricante/${props.title.toLowerCase()}/${marca.codigo}`}
+								to={`/fabricante/${props.title.toLowerCase()}/${marca.nome}/${
+									marca.codigo
+								}`}
 							>
 								<AccordionItem key={`${props.title}-${marca.codigo}`}>
 									{marca.nome}{' '}
