@@ -11,7 +11,7 @@ ReactDOM.render(
 			<Routes>
 				<Route path='/' element={<App />} />
 				<Route path='/fabricante' element={<Fabricante />}>
-					<Route path=':codigo' element={<Fabricante />} />
+					<Route path=':tipo/:codigo' element={<Fabricante />} />
 				</Route>
 				<Route
 					path='*'

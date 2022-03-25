@@ -13,8 +13,6 @@ function Accordion(props) {
 		isOpen ? setIsOpen(0) : setIsOpen(1);
 	}
 
-	//<Link to='/fabricante'>Fabricante</Link> | {''}
-
 	return (
 		<Container>
 			<div>
@@ -26,7 +24,9 @@ function Accordion(props) {
 				<Content className={isOpen ? 'show' : ''}>
 					{data[`${props.title.toLowerCase()}`].map((marca) => {
 						return (
-							<Link to={`/fabricante/${marca.codigo}`}>
+							<Link
+								to={`/fabricante/${props.title.toLowerCase()}/${marca.codigo}`}
+							>
 								<AccordionItem key={`${props.title}-${marca.codigo}`}>
 									{marca.nome}{' '}
 								</AccordionItem>
