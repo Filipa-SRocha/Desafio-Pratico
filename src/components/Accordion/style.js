@@ -19,6 +19,7 @@ export const Tab = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 8px;
+	cursor: pointer;
 `;
 
 export const Content = styled.div`
@@ -28,6 +29,21 @@ export const Content = styled.div`
 
 	&.show {
 		height: auto;
-		max-height: 9999999px;
+		max-height: 200px;
+		overflow: auto;
+	}
+`;
+
+export const AccordionItem = styled.div`
+	margin: 5px;
+	padding: 10px;
+	color: #0b3a5e;
+	font-weight: bold;
+	cursor: pointer;
+
+	&:hover {
+		background: #0b3a5e;
+		color: white;
+		border-radius: 10px;
 	}
 `;

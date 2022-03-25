@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Arrow, Container, Content, Tab } from './style';
+import { AccordionItem, Arrow, Container, Content, Tab } from './style';
 import { DataContext } from '../../App';
 import { useContext } from 'react';
 
@@ -23,7 +23,9 @@ function Accordion(props) {
 				<Content className={isOpen ? 'show' : ''}>
 					{data[`${props.title.toLowerCase()}`].map((marca) => {
 						return (
-							<div key={`${props.title}-${marca.codigo}`}>{marca.nome} </div>
+							<AccordionItem key={`${props.title}-${marca.codigo}`}>
+								{marca.nome}{' '}
+							</AccordionItem>
 						);
 					})}
 				</Content>
