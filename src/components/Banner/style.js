@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	height: 200px;
-	background: #1b75bc;
+	background: #0b3a5e;
 	display: grid;
+	margin-bottom: 60px;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
 	grid-template-areas:
-		' . .'
-		' . .'
+		'. .'
+		'. .'
 		'imagem texto'
 		'imagem .'
 		'imagem .';

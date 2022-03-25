@@ -13,12 +13,12 @@ export const Arrow = styled.span`
 export const Tab = styled.div`
 	background: #0b3a5e;
 	color: white;
-	padding: 0 20px;
+	padding: 10px 20px;
 	border-radius: 5px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 8px;
+
 	cursor: pointer;
 `;
 
