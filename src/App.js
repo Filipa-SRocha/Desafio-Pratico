@@ -1,14 +1,15 @@
-import Banner from './components/Banner';
-import Header from './components/Header';
-import Accordion from './components/Accordion';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Home from './Pages/Home';
+
+const DataContext = React.createContext();
 
 function App() {
 	const [info, setInfo] = useState({
-		carros: null,
-		motos: null,
-		caminhoes: null,
+		carros: [],
+		motos: [],
+		caminhoes: [],
 	});
+	const dataContextObject = info;
 
 	function fetchData(category) {
 		const url = `https://parallelum.com.br/fipe/api/v1/${category}/marcas`;
@@ -34,14 +35,16 @@ function App() {
 		getData();
 	}, []);
 
-	console.log(info);
+	console.log('apppppp', info);
+
 	return (
-		<div className='App'>
-			<Header />
-			<Banner />
-			<Accordion title='Carros' content='{carros}' />
-		</div>
+		<DataContext.Provider value={dataContextObject}>
+			<div className='App'>
+				<Home />
+			</div>
+		</DataContext.Provider>
 	);
 }
 
 export default App;
+export { DataContext };

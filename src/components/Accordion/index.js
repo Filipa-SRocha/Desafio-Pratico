@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { Arrow, Container, Content, Tab } from './style';
+import { DataContext } from '../../App';
+import { useContext } from 'react';
 
 function Accordion(props) {
 	const [isOpen, setIsOpen] = useState(0);
+	const info = useContext(DataContext);
+	const [data, setData] = useState(info);
 
 	function toggle() {
 		isOpen ? setIsOpen(0) : setIsOpen(1);
@@ -17,11 +21,11 @@ function Accordion(props) {
 				</Tab>
 
 				<Content className={isOpen ? 'show' : ''}>
-					Aqui vai ser a lista
-					{/* {props.content.map((marca) => {
-						return <div>{marca} </div>;
-					})} */}
-					{console.log(props.content)}
+					{data[`${props.title.toLowerCase()}`].map((marca) => {
+						return (
+							<div key={`${props.title}-${marca.codigo}`}>{marca.nome} </div>
+						);
+					})}
 				</Content>
 			</div>
 		</Container>
