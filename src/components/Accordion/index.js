@@ -16,7 +16,13 @@ function Accordion(props) {
 					<Arrow>{isOpen ? '^' : 'v'}</Arrow>
 				</Tab>
 
-				<Content className={isOpen ? 'show' : ''}>Aqui vai ser a lista</Content>
+				<Content className={isOpen ? 'show' : ''}>
+					Aqui vai ser a lista
+					{/* {props.content.map((marca) => {
+						return <div>{marca} </div>;
+					})} */}
+					{console.log(props.content)}
+				</Content>
 			</div>
 		</Container>
 	);
