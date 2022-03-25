@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { AccordionItem, Arrow, Container, Content, Tab } from './style';
 import { DataContext } from '../../App';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 function Accordion(props) {
 	const [isOpen, setIsOpen] = useState(0);
@@ -11,6 +12,8 @@ function Accordion(props) {
 	function toggle() {
 		isOpen ? setIsOpen(0) : setIsOpen(1);
 	}
+
+	//<Link to='/fabricante'>Fabricante</Link> | {''}
 
 	return (
 		<Container>
@@ -23,9 +26,11 @@ function Accordion(props) {
 				<Content className={isOpen ? 'show' : ''}>
 					{data[`${props.title.toLowerCase()}`].map((marca) => {
 						return (
-							<AccordionItem key={`${props.title}-${marca.codigo}`}>
-								{marca.nome}{' '}
-							</AccordionItem>
+							<Link to={`/fabricante/${marca.codigo}`}>
+								<AccordionItem key={`${props.title}-${marca.codigo}`}>
+									{marca.nome}{' '}
+								</AccordionItem>
+							</Link>
 						);
 					})}
 				</Content>
