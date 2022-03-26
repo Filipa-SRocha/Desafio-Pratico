@@ -23,3 +23,4 @@ npm start
 5. Abrir [http://localhost:3000](http://localhost:3000) .
 
 
+![Captura de ecrã de 2022-03-26 00-00-22](https://user-images.githubusercontent.com/77246733/160215985-01c569ba-a931-479a-aec1-63f22234e73c.png)
